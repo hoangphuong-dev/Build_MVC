@@ -1,15 +1,22 @@
 <?php 
 
-/**
- * 
- */
-class Home {
+class Home extends Controller {
 	
 	function Sayhi() {
-		echo "Home - Sayhi";
+		$teo = $this->model("SinhVienModel");
+		echo $teo->getSV();
 	}
 
-	function Show() {
-		echo "Home - show";
+	function Show($a, $b) {
+		$teo = $this->model("SinhVienModel");
+		$tong =  $teo->Tong($a, $b);
+		$this->view("aodep", [
+			"Page"=>"news",
+			"Number"=>$tong,
+			"mau"=>"red",
+			"SoThich"=>["A", "B", "C"],
+			"SV"=> $teo->SinhVien()
+
+	]);
 	}
 }

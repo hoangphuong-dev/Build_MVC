@@ -19,7 +19,9 @@ class App {
 			$this->controller = $arr[0];
 			unset($arr[0]);
 		}
-			require_once "./mvc/controllers/".$this->controller.".php"; // nếu không thay đổi giá trị (mặc định gọi về home)
+			require_once "./mvc/controllers/".$this->controller.".php"; 
+			$this->controller = new $this->controller;
+			// nếu không thay đổi giá trị (mặc định gọi về home)
 
 			// xử lí action 
 			if(isset($arr[1])) {
