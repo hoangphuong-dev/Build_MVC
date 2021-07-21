@@ -1,6 +1,6 @@
 <?php 
-
-class Home extends Controller {
+class Home {
+	use Controller;
 	
 	function Sayhi() {
 		$teo = $this->model("SinhVienModel");

@@ -1,6 +1,5 @@
 <?php 
-class Controller {
-	
+trait Controller {
 	public function model($model) {
 		require_once "mvc/models/".$model.".php";
 		return new $model;
